@@ -192,3 +192,41 @@ footer.bg-dark {
 .nav-links a.active{
     color: yellow;
 }
+
+form label, form input, form textarea{
+    width: 100%;
+}
+form label{
+    color: yellow;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+form input{
+    height: 35px;
+}
+form input, form textarea{
+    border-radius: 8px;
+    border: 1px solid #000;
+    margin-bottom: 20px
+}
+form div.button{
+    display: flex;
+    justify-content: flex-end!important;
+}
+form button {
+    background-color: #ef1080;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 8px;
+    font-size: 1.2em;
+    letter-spacing: 0.04em;
+    border: none;
+    padding: 15px 30px;
+    line-height: 1em;
+    align-item: right;
+}
+
+section {
+    margin-bottom: 80px;
+}
