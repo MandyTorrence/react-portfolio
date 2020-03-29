@@ -20,7 +20,7 @@ function About() {
       <h1>Let Me Introduce Myself</h1>
       <div class="about-container">
         <div className="image col">
-          <img src="https://mandytorrence.com/wp-content/uploads/2019/04/MandyTorrence-AboutMeImage.png" />
+          <img src="../../Images/MandyTorrence-AboutMeImage.png" />
         </div>
         <div class="bio col">
           <h2>Mandy Torrence</h2>

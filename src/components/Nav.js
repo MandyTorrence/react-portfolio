@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom'
 
 function Nav() {
     return (
@@ -7,15 +8,9 @@ function Nav() {
                 <img src="../../Images/PortfolioLogo.png" />
             </div>
             <div className="nav-links">
-                <a className="navbar-brand" href="/">
-                    About
-                </a>
-                <a className="navbar-brand" href="/portfolio">
-                    Portfolio
-                </a>
-                <a className="navbar-brand" href="/contact">
-                    Contact
-                </a>
+                <NavLink to="/">About</NavLink>
+                <NavLink to="/portfolio">Portfolio</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
             </div>
         </nav>
     );

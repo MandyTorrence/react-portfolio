@@ -184,3 +184,11 @@ nav.navbar:after {
 footer.bg-dark {
     padding: 30px;
 }
+
+.nav-links a{
+    color: #fff;
+    text-decoration: none;
+}
+.nav-links a.active{
+    color: yellow;
+}
