@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const portfolioRoutes = require("./portfolio.js");
+const portfolioRoutes = require("./projects.js");
 
 //Portfolio routes
 router.use("/portfolio", portfolioRoutes);

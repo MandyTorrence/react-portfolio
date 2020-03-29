@@ -8,7 +8,7 @@ mongoose.connect(
     "mongodb://localhost/reactreadinglist"
 );
 
-const portfolioSeed = [
+const projectSeed = [
     {
         title: "Weather Dashboard",
         image: "../../Images/Torrence-PortfolioImage-Weather.jpg",
@@ -47,9 +47,9 @@ const portfolioSeed = [
     }
 ];
 
-db.Portfolios
+db.Projects
     .remove({})
-    .then(() => db.Portfolio.collection.insertMany(portfolioSeed))
+    .then(() => db.Projects.collection.insertMany(projectSeed))
     .then(data => {
         console.log(data.result.n + " records inserted!");
         process.exit(0);

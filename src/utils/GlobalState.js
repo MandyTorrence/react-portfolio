@@ -1,9 +1,10 @@
 import React, { createContext, useReducer, useContext } from "react";
 
+
 const ProjectContext = createContext({
     id: "",
-    projectImage: '',
-    projectName: '',
+    image: '',
+    title: '',
     githubUrl: '',
     demoUrl: ''
 });

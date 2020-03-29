@@ -1,14 +1,15 @@
 import React from "react";
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 function Nav() {
     return (
         <nav className="navbar navbar-dark bg-dark">
-            <div className="logo">
-                <img src="../../Images/PortfolioLogo.png" />
-            </div>
+            <Link to="/">
+                <div className="logo">
+                    <img src="../../Images/PortfolioLogo.png" />
+                </div>
+            </Link>
             <div className="nav-links">
-                <NavLink to="/">About</NavLink>
                 <NavLink to="/portfolio">Portfolio</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
             </div>

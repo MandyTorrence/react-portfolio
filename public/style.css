@@ -188,6 +188,7 @@ footer.bg-dark {
 .nav-links a{
     color: #fff;
     text-decoration: none;
+    font-size: 1.2em;
 }
 .nav-links a.active{
     color: yellow;
@@ -202,7 +203,7 @@ form label{
     font-weight: bold;
 }
 form input{
-    height: 35px;
+    padding: 8px 15px;
 }
 form input, form textarea{
     border-radius: 8px;
@@ -214,7 +215,7 @@ form div.button{
     justify-content: flex-end!important;
 }
 form button {
-    background-color: #ef1080;
+    background-color: #f73d90;
     color: white;
     text-transform: uppercase;
     font-weight: 700;
@@ -224,9 +225,33 @@ form button {
     border: none;
     padding: 15px 30px;
     line-height: 1em;
-    align-item: right;
 }
 
 section {
     margin-bottom: 80px;
+}
+
+.oops {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 50px 50px 0px;
+}
+.oops div{
+    width: 50%;
+}
+.oops-image img {
+    width: 100%;
+}
+
+.oops-content {
+    padding: 30px;
+}
+
+@media only screen and (max-width: 767px){
+    .oops div{
+    width: 100%;
+}
+.oops {
+    padding: 0px 50px 0px 0px;
+}
 }

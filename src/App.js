@@ -1,8 +1,8 @@
 import React from "react";
-import About from "./components/About";
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import Error from './components/Error';
+import About from "./pages/About";
+import Portfolio from './pages/Portfolio';
+import Contact from './pages/Contact';
+import Error from './pages/Error';
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import { ProjectProvider } from "./utils/GlobalState";
@@ -21,7 +21,7 @@ function App() {
               <Route exact path="/" component={About} />
               <Route exact path="/portfolio" component={Portfolio} />
               <Route exact path="/contact" component={Contact} />
-              <Route component={Error} />
+              <Route path="*" component={Error} />
             </Switch>
           </ProjectProvider>
         </div>

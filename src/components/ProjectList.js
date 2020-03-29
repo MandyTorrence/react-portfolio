@@ -1,31 +1,64 @@
-import React from "react";
-import { useProjectContext } from "../utils/GlobalState";
+import React, { useEffect } from "react";
+import { ListItem, List } from "../List";
+import DeleteBtn from "../DeleteBtn";
+import { Link } from "react-router-dom";
+import { useStoreContext } from "../../utils/GlobalState";
+import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
+import API from "../../utils/API";
 
 function ProjectList() {
-  const [state, dispatch] = useProjectContext();
+  const [state, dispatch] = useStoreContext();
+
+  const removePost = id => {
+    API.deletePost(id)
+      .then(() => {
+        dispatch({
+          type: REMOVE_POST,
+          _id: id
+        });
+      })
+      .catch(err => console.log(err));
+  };
+
+  const getPosts = () => {
+    dispatch({ type: LOADING });
+    API.getPosts()
+      .then(results => {
+        dispatch({
+          type: UPDATE_POSTS,
+          posts: results.data
+        });
+      })
+      .catch(err => console.log(err));
+  };
+
+  useEffect(() => {
+    getPosts();
+  }, []);
 
   return (
     <div>
-      <h4>My Projects:</h4>
-      <ul className="list-group">
-        {state.map((item, index) => (
-          <li className="list-group-item col-12" key={item.id}>
-            <button
-              className="btn btn-warning mr-4"
-              onClick={() => dispatch({ type: "prioritize", index })}
-            >
-              Prioritize
-            </button>
-            <button
-              className="btn btn-danger mr-4"
-              onClick={() => dispatch({ type: "remove", index })}
-            >
-              X Remove
-            </button>
-            {index}:<span className={item.priority ? "font-weight-bold" : ""}> {item.name}</span>
-          </li>
-        ))}
-      </ul>
+      <h1>All Blog Posts</h1>
+      <h3 className="mb-5 mt-5">Click on a post to view</h3>
+      {state.posts.length ? (
+        <List>
+          {state.posts.map(post => (
+            <ListItem key={post._id}>
+              <Link to={"/posts/" + post._id}>
+                <strong>
+                  {post.title} by {post.author}
+                </strong>
+              </Link>
+              <DeleteBtn onClick={() => removePost(post._id)} />
+            </ListItem>
+          ))}
+        </List>
+      ) : (
+        <h3>You haven't added any posts yet!</h3>
+      )}
+      <div className="mt-5">
+        <Link to="favorites">View favorites</Link>
+      </div>
     </div>
   );
 }
