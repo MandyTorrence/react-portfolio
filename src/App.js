@@ -1,6 +1,7 @@
 import React from "react";
 import About from "./components/About";
 import ProjectList from "./components/ProjectList";
+import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import { ProjectProvider } from "./utils/GlobalState";
 import "./App.css";
@@ -14,6 +15,7 @@ function App() {
           <About />
         </ProjectProvider>
       </div>
+      <Footer />
     </div>
   );
 }

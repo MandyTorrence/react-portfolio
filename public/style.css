@@ -180,3 +180,7 @@ nav.navbar:after {
     width: 60vw;
     margin: auto;
 }
+
+footer.bg-dark {
+    padding: 30px;
+}
