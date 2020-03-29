@@ -30,6 +30,10 @@ function About() {
           <p>In my free time I have many hobbies. I enjoy cake decoration, sewing, wood working, hiking, and travel amoungst other things. My husband and I travel whenever we get the opportunity. We most recently went to Scotland and Greece. The only thing we don't enjoy about travel is leaving our pups at home.</p>
         </div>
       </div>
+      <div className="fullwidth-section">
+        <div className="portfolio-preview"><a href="/portfolio">See My Portfolio</a></div>
+        <div className="contact-preview"><a href="/contact">Contact Me Today</a></div>
+      </div>
     </div>
   );
 }

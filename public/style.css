@@ -54,11 +54,7 @@ nav .logo img{
 }
 
 .nav-links a{
-    padding-right: 60px;
-}
-
-.nav-links a:last-child{
-    padding-right: 0px;
+    padding-right:0px;
 }
 
 nav .logo img {
@@ -68,7 +64,12 @@ nav .logo img {
 .bio.col {
     padding-bottom: 30px;
 }
-
+.nav-links {
+    width: 50%;
+    max-width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
 @media (max-width: 767px){
 
 nav .logo{
@@ -80,13 +81,10 @@ nav .logo{
     }
     nav .logo img {
     max-width: 300px;
-    
 }
 .nav-links {
-    width: 90%;
-    max-width: 90%;
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
 }
 .about-container{
     display: flex;
@@ -106,4 +104,79 @@ nav .logo{
 .bio.col{
     order: 1;
 }
+}
+.portfolio-preview , .contact-preview {
+    width: 50vw;
+    max-width: 50vw;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.portfolio-preview{
+    background-image: url("../../Images/MyPortfolio.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.contact-preview {
+    background-image: url("../../Images/ContactMe.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.portfolio-preview a{
+    color: #343a40;
+    background-image: linear-gradient(to left, rgba(142, 133, 9, 0.8),rgba(249, 233, 18, 1)) ;
+    padding: 75px 30px;
+    width: 100%;
+    display: block;
+}
+.contact-preview a{
+    color: #eee;
+    background-image: linear-gradient(to right, rgba(113, 29, 71, 0.8), rgba(251, 78, 164, 1));
+    padding: 75px 30px;
+    width: 100%;
+    display: block;
+}
+.fullwidth-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+@media (min-width: 576px){
+.fullwidth-section {
+    margin-left: calc( -50vw + (540px / 2) - 15px);
+}
+}
+@media (min-width: 768px){
+.fullwidth-section {
+    margin-left: calc( -50vw + (720px / 2) - 15px);
+}
+}
+@media (min-width: 992px){
+.fullwidth-section {
+    margin-left: calc( -50vw + (960px / 2) - 15px);
+}
+}
+@media (min-width: 1200px){
+.fullwidth-section {
+    margin-left: calc( -50vw + (1140px / 2) - 15px);
+}
+}
+@media (max-width: 575px){
+.fullwidth-section {
+    margin-left: -15px;
+}
+.portfolio-preview , .contact-preview {
+    width: 100vw;
+    max-width: 100vw;
+}
+}
+nav.navbar:after {
+    content: '';
+    width: 100%;
+    display: block;
+    background: #000;
+    height: 1px;
+    width: 60vw;
+    margin: auto;
 }
