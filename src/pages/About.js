@@ -18,11 +18,11 @@ function About() {
   return (
     <div>
       <h1>Let Me Introduce Myself</h1>
-      <div class="about-container">
+      <div className="about-container">
         <div className="image col">
           <img src="../../Images/MandyTorrence-AboutMeImage.png" />
         </div>
-        <div class="bio col">
+        <div className="bio col">
           <h2>Mandy Torrence</h2>
           <h4>Web Designer & Developer</h4>
           <p>Raleigh, North Carolina is my home. I was a Political Science major at NC State University and worked for the North Carolina Secretary of State while I went through school. No matter what job I had I always ended up doing the graphics for an event, campaign or website. I was working at WRAL in the TV division, when an opportunity became available to work as a graphic designer for WRAL Digital Solutons.</p>
