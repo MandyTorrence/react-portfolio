@@ -258,3 +258,69 @@ section {
     padding: 0px 50px 0px 0px;
 }
 }
+
+ul.flex {
+    list-style:  none;
+    padding-left:  0px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+}
+li.project-card {
+    width: calc((100% / 3) - 40px );
+    padding-bottom: 80px;
+}
+li.project-card img{
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+li.project-card h3{
+    text-align: center;
+    padding: 15px 0px;
+    font-weight: 300;
+    text-transform: capitalize;
+    letter-spacing: 0.04em;
+}
+li.project-card button{
+    width: calc(50% - 10px);
+    margin: 0px 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+li.project-card a:nth-child(even) button{
+    background-color: #fff;
+    color: #343a40;
+}
+li.project-card a:nth-child(even) button:hover{
+    background-color: rgba(255,255,255,0.8);
+    color: #000;
+}
+
+@media only screen and (max-width: 992px){
+    li.project-card {
+    width: calc((100% / 2) - 20px);
+}
+}
+@media only screen and (max-width: 740px){
+    li.project-card {
+    width: 100%;
+}
+}
+
+.nav-links {
+    max-width: 300px;
+}
+@media only screen and (max-width: 740px){
+nav.navbar a {
+    width: 100%;
+}
+.nav-links{
+    margin: auto;
+    margin-bottom: 30px;
+}
+.nav-links a{
+    text-align: center;
+}
+}
