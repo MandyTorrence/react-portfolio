@@ -1,66 +1,67 @@
-import React, { useEffect } from "react";
-import { ListItem, List } from "../List";
-import DeleteBtn from "../DeleteBtn";
-import { Link } from "react-router-dom";
-import { useStoreContext } from "../../utils/GlobalState";
-import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
-import API from "../../utils/API";
+import React from "react";
 
-function ProjectList() {
-  const [state, dispatch] = useStoreContext();
+const projects = [
+  {
+    id: 1,
+    title: "Weather Dashboard",
+    image: "../../Images/Torrence-PortfolioImage-Weather.jpg",
+    githubUrl: "https://github.com/MandyTorrence/weatherForecast.github.io",
+    demoUrl: "https://mandytorrence.github.io/weatherForecast.github.io"
+  },
+  {
+    id: 2,
+    title: "Harry Potter Quiz",
+    image: "../../Images/Torrence-PortfolioImage-HarryPotterQuiz.jpg",
+    githubUrl: "https://github.com/MandyTorrence/quiz-game",
+    demoUrl: "https://mandytorrence.github.io/quiz-game/"
+  },
+  {
+    id: 3,
+    title: "Password Generator",
+    image: "../../Images/Torrence-PortfolioImage-Password.jpg",
+    githubUrl: "https://github.com/MandyTorrence/mandy-torrence.javascript.github.io",
+    demoUrl: "https://mandytorrence.github.io/mandy-torrence.javascript.github.io/"
+  },
+  {
+    id: 4,
+    title: "Dog Friendly World",
+    image: "../../Images/Torrence-PortfolioImage-DogFriendly.jpg",
+    githubUrl: "https://github.com/apereira91/dogFriendly",
+    demoUrl: "https://apereira91.github.io/dogFriendly/"
+  },
+  {
+    id: 5,
+    title: "Note Taker",
+    image: "../../Images/Torrence-PortfolioImage-Notes.jpg",
+    githubUrl: "https://github.com/MandyTorrence/notetaker",
+    demoUrl: "https://torrencenotetaker.herokuapp.com/"
+  },
+  {
+    id: 6,
+    title: "Fairy Tale Tours",
+    image: "../../Images/Torrence-PortfolioImage-FairyTaleTours.jpg",
+    githubUrl: "https://github.com/tour-guide/tour-guide-web",
+    demoUrl: "https://fairytale-audio-tours.herokuapp.com/stories"
+  }
+];
 
-  const removePost = id => {
-    API.deletePost(id)
-      .then(() => {
-        dispatch({
-          type: REMOVE_POST,
-          _id: id
-        });
-      })
-      .catch(err => console.log(err));
-  };
 
-  const getPosts = () => {
-    dispatch({ type: LOADING });
-    API.getPosts()
-      .then(results => {
-        dispatch({
-          type: UPDATE_POSTS,
-          posts: results.data
-        });
-      })
-      .catch(err => console.log(err));
-  };
-
-  useEffect(() => {
-    getPosts();
-  }, []);
-
+const ProjectList = () => {
   return (
-    <div>
-      <h1>All Blog Posts</h1>
-      <h3 className="mb-5 mt-5">Click on a post to view</h3>
-      {state.posts.length ? (
-        <List>
-          {state.posts.map(post => (
-            <ListItem key={post._id}>
-              <Link to={"/posts/" + post._id}>
-                <strong>
-                  {post.title} by {post.author}
-                </strong>
-              </Link>
-              <DeleteBtn onClick={() => removePost(post._id)} />
-            </ListItem>
-          ))}
-        </List>
-      ) : (
-        <h3>You haven't added any posts yet!</h3>
-      )}
-      <div className="mt-5">
-        <Link to="favorites">View favorites</Link>
-      </div>
-    </div>
+    <ul className="flex">
+      {projects.map(project => {
+        return <li key={project.id} className="project-card">
+          <img src={project.image} alt={project.title} />
+          <h3>{project.title}</h3>
+          <div className="project-buttons">
+            <a href={project.githubUrl} target="_blank"><button>See the Code</button></a>
+            <a href={project.demoUrl} target="_blank"><button>See the Demo</button></a>
+          </div>
+        </li>;
+      })}
+    </ul>
   );
-}
+};
+
 
 export default ProjectList;

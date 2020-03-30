@@ -214,7 +214,7 @@ form div.button{
     display: flex;
     justify-content: flex-end!important;
 }
-form button {
+button {
     background-color: #f73d90;
     color: white;
     text-transform: uppercase;
@@ -225,6 +225,9 @@ form button {
     border: none;
     padding: 15px 30px;
     line-height: 1em;
+}
+button:hover {
+    background-color: rgba(247, 61, 144, 0.8);
 }
 
 section {

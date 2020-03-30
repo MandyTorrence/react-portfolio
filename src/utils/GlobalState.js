@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useContext } from "react";
 
 
 const ProjectContext = createContext({
-    id: "",
+    id: '',
     image: '',
     title: '',
     githubUrl: '',
@@ -20,19 +20,6 @@ function reducer(state, action) {
                     name: action.name
                 }
             ];
-        case "remove":
-            return state.filter((_, index) => {
-                return index !== action.index;
-            });
-        case "prioritize":
-            return state.map((item, index) => {
-                if (index === action.index) {
-                    return Object.assign({}, item, {
-                        priority: !item.priority
-                    });
-                }
-                return item;
-            });
         default:
             return state;
     }

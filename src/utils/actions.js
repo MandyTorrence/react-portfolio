@@ -1,2 +1,2 @@
-export const UPDATE_PPROJECTS = "UPDATE_PROJECTS";
+export const UPDATE_PROJECTS = "UPDATE_PROJECTS";
 export const LOADING = "LOADING";
