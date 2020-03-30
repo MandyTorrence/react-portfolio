@@ -6,9 +6,9 @@ const Contact = () => {
             <h1>
                 Contact Me
             </h1>
-            <div class="divider-line">
+            <div className="divider-line">
             </div>
-            <div class="section-content">
+            <div className="section-content">
                 <form>
                     <div>
                         <label for="name">Name:</label>
@@ -22,7 +22,7 @@ const Contact = () => {
                         <label for="message">Message:</label>
                         <textarea id="message" rows="8" name="user_message"></textarea>
                     </div>
-                    <div class="button">
+                    <div className="button">
                         <button type="submit">Send It</button>
                     </div>
                 </form>
